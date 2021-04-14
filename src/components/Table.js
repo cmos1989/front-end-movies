@@ -5,7 +5,7 @@ export default function Table(){
 
     const baseUrl = "http://localhost:8082/api/";
 
-    const [genders, steGenders] = useState({});
+    const [genders, steGenders] = useState([]);
 
     useEffect(()=>{
         getGeneros();        
@@ -33,12 +33,12 @@ export default function Table(){
             </thead>
             <tbody>
                 {
-                    genders.map(item => {
-                        <tr key={item.id} >
+                    genders.map(item => 
+                        <tr key={item.id}>
                             <th scope="row">{item.id}</th>
-                            <td>Mark</td>
+                            <td>{item.name}</td>
                         </tr>
-                    })
+                    )
                 }
             </tbody>
       </table>
